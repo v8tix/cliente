@@ -1,4 +1,4 @@
-package com.devsu.usuarios.model;
+package com.devsu.cliente.model;
 
 import lombok.Getter;
 import lombok.Setter;

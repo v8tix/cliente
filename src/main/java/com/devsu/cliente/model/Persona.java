@@ -1,6 +1,4 @@
-package com.devsu.usuarios.model;
-
-import com.devsu.usuarios.model.abstracts.BaseModel;
+package com.devsu.cliente.model;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -38,3 +36,4 @@ public class Persona extends BaseModel {
         return Objects.hash(identificacion);
     }
 }
+
