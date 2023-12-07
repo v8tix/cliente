@@ -48,13 +48,15 @@ public class ClienteController {
         Optional<Cliente> existingClienteOptional = clienteService.getClienteById(clienteId);
 
         if (existingClienteOptional.isPresent()) {
-            Cliente existingCliente = existingClienteOptional.get();
 
+            Cliente existingCliente = existingClienteOptional.get();
             clienteMapper.updateClienteFromRequest(clienteRequest, existingCliente);
             Cliente updatedCliente = clienteService.saveCliente(existingCliente);
 
             return ResponseEntity.ok(updatedCliente);
+
         } else {
+
             return ResponseEntity.notFound().build();
         }
     }
