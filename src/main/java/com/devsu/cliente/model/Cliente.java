@@ -2,26 +2,29 @@ package com.devsu.cliente.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "cliente")
 public class Cliente extends Persona {
-    @Column(name = "clienteId")
-    private String clienteId;
+
+    @Id
+    @GeneratedValue(generator = "clienteId")
+    @GenericGenerator(name = "clienteId", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "clienteId", updatable = false, nullable = false)
+    private UUID clienteId;
+
     @Column(name = "contrasena")
-    private String contraseña;
+    private String contrasena;
 
     @Column(name = "estado")
     private String estado;
-
-    // Constructor, Getter and Setter
 
     @Override
     public boolean equals(Object o) {

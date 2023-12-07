@@ -14,11 +14,6 @@ import java.util.UUID;
 @Setter
 @MappedSuperclass
 public abstract class BaseModel {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(updatable = false, nullable = false)
-    private UUID uuid = UUID.randomUUID();
 
     @Version
     private Long version;

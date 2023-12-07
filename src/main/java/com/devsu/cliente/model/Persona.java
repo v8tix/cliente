@@ -1,10 +1,14 @@
 package com.devsu.cliente.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-
+@Getter
+@Setter
 @MappedSuperclass
 public class Persona extends BaseModel {
     @Column(name = "nombre")
@@ -18,8 +22,10 @@ public class Persona extends BaseModel {
 
     @Column(name = "identificacion", unique = true)
     protected String identificacion;
+
     @Column(name = "direccion")
     protected String direccion;
+
     @Column(name = "telefono")
     protected String telefono;
 
