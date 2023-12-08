@@ -41,9 +41,23 @@ public class ClienteController {
     }
 
     @PutMapping("/{clienteId}")
-    public ResponseEntity<Cliente> updateCliente(
+    public ResponseEntity<Cliente> completUpdateCliente(
             @PathVariable UUID clienteId,
             @RequestBody ClienteRequest clienteRequest) {
+        
+        return handleUpdate(clienteId, clienteRequest);
+
+    }
+
+    @PatchMapping("/{clienteId}")
+    public ResponseEntity<Cliente> updateCliente(
+            @PathVariable UUID clienteId,
+            @RequestBody  ClienteRequest clienteRequest
+    ) {
+        return handleUpdate(clienteId, clienteRequest);
+    }
+
+    private ResponseEntity<Cliente> handleUpdate(UUID clienteId, ClienteRequest clienteRequest) {
 
         Optional<Cliente> existingClienteOptional = clienteService.getClienteById(clienteId);
 
