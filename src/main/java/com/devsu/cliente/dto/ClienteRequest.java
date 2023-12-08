@@ -41,5 +41,5 @@ public class ClienteRequest {
 
     @JsonProperty("estado")
     @NotNull( groups = {ValidationGroups.OnCreate.class, ValidationGroups.OnPutUpdate.class})
-    private String estado;
+    private Boolean estado;
 }
