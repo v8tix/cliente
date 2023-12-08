@@ -24,7 +24,7 @@ public class Cliente extends Persona {
     private String contrasena;
 
     @Column(name = "estado")
-    private String estado;
+    private Boolean estado;
 
     @Override
     public boolean equals(Object o) {
